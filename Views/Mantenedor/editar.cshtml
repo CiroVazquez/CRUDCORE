@@ -1,0 +1,45 @@
+﻿
+@model ContactoModel
+
+@{
+    ViewData["Title"] = "editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+  <div class="card-header">
+    Editar contacto
+  </div>
+  <div class="card-body">
+   
+      <form asp-action="editar" asp-controller="Mantenedor" method="post">
+
+        <input asp-for="idContacto" type="hidden" class="form-control">
+
+
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input asp-for="nombre" type="text" class="form-control">
+            <span asp-validation-for="nombre" class="text-danger"></span>
+        </div>
+
+         <div class="mb-3">
+            <label class="form-label">Telefono</label>
+            <input asp-for="telefono" type="text" class="form-control">
+            <span asp-validation-for="telefono" class="text-danger"></span>
+        </div>
+
+         <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input asp-for="correo" type="text" class="form-control">
+            <span asp-validation-for="correo" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a asp-action="listar" asp-controller="Mantenedor" class="btn btn-warning">Volver a la lista</a>
+    </form>
+
+
+  </div>
+</div>
+
